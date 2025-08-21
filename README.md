@@ -67,7 +67,7 @@ php artisan storage:link
 php artisan migrate --seed
 ```
 
-6. Install frontend dependencies and build assets (for local development)
+6. Install frontend dependencies and build assets ( local development)
 
 ```bash
 npm install
