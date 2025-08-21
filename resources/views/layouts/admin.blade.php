@@ -99,16 +99,18 @@
             <!-- END: Side Menu -->
             <!-- BEGIN: Content -->
              @yield('content')
-             @if (session()->has('success'))
-             <div id="flash-message" class="absolute left-1/2 transform -translate-x-1/2 bg-green-600 bg-opacity-75 p-4 max-w-sm text-white">
-                     {{ session()->get('success') }}
+                 @if (session()->has('success'))
+                 <div id="flash-success" class="absolute left-1/2 top-20 transform -translate-x-1/2 z-50 bg-green-600 bg-opacity-90 p-4 max-w-lg text-white rounded shadow-lg flex items-start gap-3">
+                     <div class="flex-1">{{ session()->get('success') }}</div>
+                     <button type="button" onclick="document.getElementById('flash-success')?.remove()" class="text-white/80 hover:text-white">&times;</button>
                  </div>
-             @endif
-             @if (session()->has('error'))
-             <div id="flash-message" class="absolute left-1/2 transform -translate-x-1/2 bg-red-600 bg-opacity-75 p-4 max-w-sm text-white">
-                     {{ session()->get('error') }}
+                 @endif
+                 @if (session()->has('error'))
+                 <div id="flash-error" class="absolute left-1/2 top-20 transform -translate-x-1/2 z-50 bg-red-600 bg-opacity-90 p-4 max-w-lg text-white rounded shadow-lg flex items-start gap-3">
+                     <div class="flex-1">{{ session()->get('error') }}</div>
+                     <button type="button" onclick="document.getElementById('flash-error')?.remove()" class="text-white/80 hover:text-white">&times;</button>
                  </div>
-             @endif
+                 @endif
             <!-- END: Content -->
         </div>
 
@@ -135,5 +137,14 @@
                 $('.amenities-selector').select2();
             });
         </script> --}}
+        <script>
+            // Auto-hide flash messages after 4s
+            setTimeout(function(){
+                var s = document.getElementById('flash-success');
+                if(s) s.remove();
+                var e = document.getElementById('flash-error');
+                if(e) e.remove();
+            }, 2000);
+        </script>
     </body>
 </html>

@@ -23,23 +23,9 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('dashboard.*', function ($view) {
             $currentPage = 'Dashboard'; // Default page
 
-            // if (request()->is('countries*')) {
-            //     $currentPage = 'Countries';
-            // } elseif (request()->is('states*')) {
-            //     $currentPage = 'States';
-            // } elseif (request()->is('allUsers*')) {
-            //     $currentPage = 'All Users';
-            // } elseif (request()->is('status*')) {
-            //     $currentPage = 'Property Status';
-            // } elseif (request()->is('type*')) {
-            //     $currentPage = 'Property Type';
-            // } elseif (request()->is('amenity*')) {
-            //     $currentPage = 'Property Amenity';
-            // } elseif (request()->is('properties*')) {
-            //     $currentPage = 'Properties';
-            // } elseif (request()->is('properties/trashed*')) {
-            //     $currentPage = 'Trashed Properties';
-            // }
+             if (request()->is('products*')) {
+                 $currentPage = 'Products';
+             } 
 
             $view->with('currentPage', $currentPage);
         });
