@@ -40,7 +40,7 @@
                 </a>
                 <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>
-             {{-- @include('layouts.inc.mobilesidebar') --}}
+             @include('layouts.inc.mobilesidebar')
         </div>
         <!-- END: Mobile Menu -->
         <!-- BEGIN: Top Bar -->
